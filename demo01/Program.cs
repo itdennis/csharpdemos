@@ -6,7 +6,7 @@ namespace demo01
     {
         static void Main(string[] args)
         {
-            IDemoBase demo = new Yield();
+            IDemoBase demo = new Async();
             demo.Run();
             Console.ReadKey();
         }
