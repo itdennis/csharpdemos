@@ -3,40 +3,27 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Threading;
+using System.IO;
+using System.Diagnostics;
 
 namespace demo01
 {
     public class Async : IDemoBase
     {
         public void Run()
-        {
-            AsyncVoidExceptions_CannotBeCaughtByCatch();
+        { 
         }
 
-        private async Task<HttpResponseMessage> ThrowExceptionAsync()
+        public async Task BoilWaterAsync()
         {
-            HttpClient httpClient = null;
-            try
-            {
-                return await httpClient.SendAsync(new HttpRequestMessage()).ConfigureAwait(false);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-        }
-        public void AsyncVoidExceptions_CannotBeCaughtByCatch()
-        {
-            try
-            {
-                var response = ThrowExceptionAsync().Result;
-            }
-            catch (Exception)
-            {
-                // The exception is never caught here!
-                throw;
-            }
+            // a very long operaton of boil water...
+            Thread.Sleep(1000000);
+            FileInfo myFile = new FileInfo(@"\bin\debug\result.txt");
+            StreamWriter sw = myFile.CreateText();
+            string s = "a very long operaton of boil water...";
+            await sw.WriteLineAsync(s);
+            sw.Close();
         }
     }
 }

@@ -5,3 +5,5 @@
 /.vs
 /demo01/bin/Debug/netcoreapp3.1
 /demo01/obj
+/webapi.demo01/bin/Debug/netcoreapp3.1
+/webapi.demo01/obj
