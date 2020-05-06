@@ -6,7 +6,7 @@ namespace demo01
     {
         static void Main(string[] args)
         {
-            IDemoBase demo = new Async();
+            IDemoBase demo = new ToDic();
             demo.Run();
             Console.ReadKey();
         }
