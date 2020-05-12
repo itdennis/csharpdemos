@@ -9,7 +9,7 @@ namespace demo01
     {
         public void Run()
         {
-            ToDicRun();
+            ToDicRun2();
         }
 
         public void ToDicRun() 
@@ -19,5 +19,20 @@ namespace demo01
             var result = lists.ToDictionary(list => list, list => value);
 
         }
+
+        public void ToDicRun2() 
+        {
+            Student s1 = new Student() { Name = "1", Age = 1 };
+            Student s2 = new Student() { Name = "1", Age = 11 };
+            Student s3 = new Student() { Name = "2", Age = 13 };
+            List<Student> students = new List<Student>() { s1, s2, s3 };
+            var result = students.ToDictionary(s => s.Name, s=> s.Age);
+        }
+    }
+
+    public class Student
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
