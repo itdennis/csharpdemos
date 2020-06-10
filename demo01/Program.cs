@@ -6,7 +6,7 @@ namespace demo01
     {
         static void Main(string[] args)
         {
-            IDemoBase demo = new ToDic();
+            IDemoBase demo = new Nullable();
             demo.Run();
             Console.ReadKey();
         }
