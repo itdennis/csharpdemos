@@ -9,22 +9,20 @@ namespace demo01
     {
         static void Main(string[] args)
         {
-            {
-                C_8_0_AsyncEnumerable demo = new C_8_0_AsyncEnumerable();
-                foreach (var item in demo.ReadDataFromDataSource(10))
-                {
-                    Console.WriteLine($"Thread Num: {Thread.CurrentThread.ManagedThreadId}, ReadDataFromDataSource: {item}");
-                }
+            //{
+            //    C_8_0_AsyncEnumerable demo = new C_8_0_AsyncEnumerable();
+            //    foreach (var item in demo.ReadDataFromDataSource(10))
+            //    {
+            //        Console.WriteLine($"Thread Num: {Thread.CurrentThread.ManagedThreadId}, ReadDataFromDataSource: {item}");
+            //    }
 
-                MainAsync().Wait();
+            //    MainAsync().Wait();
                 
-            }
+            //}
 
             {
-                //IDemoBase demo = new C_8_0_Default_interface_methods();
-                //IDemoBase demo2 = new C_8_0_Default_interface_methods_no();
-                //demo.Run2("demo");
-                //demo2.Run2("demo2");
+                IDemoBase demo = new DicTest();
+                demo.Run();
             }
 
 
