@@ -15,7 +15,7 @@ namespace demo01
         public void ToDicRun() 
         {
             List<string> lists = new List<string>() { "1", "2", "3", "4", "4" };
-            string value = "value";
+            // string value = "value";
             var result = lists.Distinct().ToDictionary(list => list);
 
         }

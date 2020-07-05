@@ -21,7 +21,7 @@ namespace demo01
             //}
 
             {
-                IDemoBase demo = new DicTest();
+                IDemoBase demo = new ParallelDemo();
                 demo.Run();
             }
 
